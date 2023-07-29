@@ -1,5 +1,7 @@
 # target: prereqs
 # 	recipe
+# .PHONY means the command doesnt have to check if there is a file or prevent file conflicts
+# .PHONY helps improve on performance
 
 .PHONY: install
 install:
@@ -43,4 +45,4 @@ up-dependencies-only:
 	docker-compose -f docker-compose.dev.yml up --force-recreate db
 
 .PHONY: update
-update: install migrate install-pre-commit ;
+update: install migrations migrate install-pre-commit ;
