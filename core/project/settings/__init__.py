@@ -6,7 +6,7 @@ from split_settings.tools import include, optional
 # from core.general.utils.pytest import is_pytest_running
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
-ENVVAR_SETTINGS_PREFIX = 'PRO_DJANGO_SETTING_'
+ENVVAR_SETTINGS_PREFIX = 'PRO_DJANGO_SETTINGS_'
 LOCAL_SETTINGS_PATH = os.getenv(f'{ENVVAR_SETTINGS_PREFIX}LOCAL_SETTINGS_PATH')
 
 if not LOCAL_SETTINGS_PATH:
@@ -19,16 +19,15 @@ if not os.path.isabs(LOCAL_SETTINGS_PATH):
 
 include(
     'base.py',
-    #'logging.py',
-    #'rest_framework.py',
-    #'channels.py',
-    #'aws.py',
-    #'custom.py',
+    # 'logging.py',
+    # 'rest_framework.py',
+    # 'channels.py',
+    # 'aws.py',
+    'custom.py',
     optional(LOCAL_SETTINGS_PATH),
-    #'envvars.py',
-    #'docker.py',
+    'envvars.py',
+    'docker.py',
 )
 
-#if not is_pytest_running():
- #   assert SECRET_KEY is not NotImplemented  # type: ignore # noqa: F821
-
+# if not is_pytest_running():
+#    assert SECRET_KEY is not NotImplemented  # type: ignore # noqa: F821
