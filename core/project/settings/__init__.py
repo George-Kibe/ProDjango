@@ -19,7 +19,7 @@ if not os.path.isabs(LOCAL_SETTINGS_PATH):
 
 include(
     'base.py',
-    # 'logging.py',
+    'logging.py',
     # 'rest_framework.py',
     # 'channels.py',
     # 'aws.py',

@@ -13,6 +13,6 @@ cp core/project/settings/templates/settings.unittests.py ./local/settings.unitte
 ```bash
 make shell
 
-from cooking_core.config.models import Config
+from core.config.models import Config
 Config.objects.create(owner=None, transaction_fee=1)
 ```
