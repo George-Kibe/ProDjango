@@ -49,10 +49,29 @@ WSGI_APPLICATION = "core.project.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": "/home/george/Programming/django-python/ProDjango/db.sqlite3",
+#     }
+# }
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "/home/george/Programming/django-python/ProDjango/db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'recipe_core',
+        'USER': 'postgres',
+        'PASSWORD': 'kibe1234',
+        'HOST': 'localhost',
+        'PORT': '5432',
+        'ATOMIC_REQUESTS': True,
+        # TODO(dmu) MEDIUM: Unfortunately Daphne / ASGI / Django Channels do not properly reuse database connections
+        #                   and therefore we are getting resource (connection) leak that leads to the following:
+        #                   django.db.utils.OperationalError: FATAL:  sorry, too many clients already
+        #                   `'CONN_MAX_AGE': 0` is used as workaround. In case it notably affects performance
+        #                   implement a solution that either closes database connections on WebSocket client
+        #                   disconnect and implement connection pooling outside Django (BgBouncer or similar)
+        'CONN_MAX_AGE': 0,
     }
 }
 
