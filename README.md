@@ -1,7 +1,6 @@
 ## Project setup
 
 ================
-.. continue from 16:46 Tutorial 4
 Project setup instructions here.
 
 ```bash
@@ -15,4 +14,8 @@ make shell
 
 from core.config.models import Config
 Config.objects.create(owner=None, transaction_fee=1)
+```
+Adding Pytest.
+```bash
+poetry add pytest pytest-xdist pytest-django model-bakery
 ```
