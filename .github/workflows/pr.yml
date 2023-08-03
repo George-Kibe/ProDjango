@@ -1,0 +1,36 @@
+name: Quality Assurance
+on: [pull_request, workflow_call]
+
+jobs:
+  quality-assurance:
+    name: Quality Assurance
+    runs-on: ubuntu-latest
+    container: python:3.10.9-buster
+
+    services:
+      db:
+        image: postgres:15.3-alpine
+        env:
+          POSTGRES_DB: recipe_core
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: kibe1234
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Poetry
+        uses: abatilo/actions-poetry@v2.0.0
+        with:
+          poetry-version: 1.5.1
+
+      - name: Install Dependencies
+        run: make install && make install-pre-commit
+
+      - name: Lint
+        run: make lint
+
+      - name: Test
+        run: make test
+        env:
+          PRO_DJANGO_SETTINGS_DATABASES: '{"default":{"HOST":"db"}}'
+          PRO_DJANGO_SETTINGS_LOCAL_SETTINGS_PATH: './core/project/settings/templates/settings.github.py'
