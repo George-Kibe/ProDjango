@@ -1,6 +1,7 @@
-from cooking_core.general.models import CreatedModified
 from django.core.validators import MinValueValidator
 from django.db import models
+
+from core.general.models import CreatedModified
 
 
 class Comment(CreatedModified):

@@ -1,9 +1,10 @@
-from cooking_core.general.constants import ACCOUNT_NUMBER_LENGTH, SIGNATURE_LENGTH
-from cooking_core.general.serializers import ValidateFieldsMixin
-from cooking_core.general.utils.cryptography import is_dict_signature_valid
-from cooking_core.general.validators import HexStringValidator
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
+
+from core.general.constants import ACCOUNT_NUMBER_LENGTH, SIGNATURE_LENGTH
+from core.general.serializers import ValidateFieldsMixin
+from core.general.utils.cryptography import is_dict_signature_valid
+from core.general.validators import HexStringValidator
 
 from .models import Config
 

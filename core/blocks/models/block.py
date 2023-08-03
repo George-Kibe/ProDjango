@@ -1,9 +1,10 @@
 import logging
 
-from cooking_core.general.constants import ACCOUNT_NUMBER_LENGTH, SIGNATURE_LENGTH
-from cooking_core.general.models.custom_model import CustomModel
-from cooking_core.general.validators import HexStringValidator
 from django.db import models
+
+from core.general.constants import ACCOUNT_NUMBER_LENGTH, SIGNATURE_LENGTH
+from core.general.models.custom_model import CustomModel
+from core.general.validators import HexStringValidator
 
 logger = logging.getLogger(__name__)
 

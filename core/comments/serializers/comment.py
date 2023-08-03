@@ -1,9 +1,10 @@
-from cooking_core.accounts.models.account import Account
-from cooking_core.accounts.serializers.account import AccountSerializer
-from cooking_core.config.models import get_value
-from cooking_core.general.balance import validate_balance_covers_transaction_fee
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
+
+from core.accounts.models.account import Account
+from core.accounts.serializers.account import AccountSerializer
+from core.config.models import get_value
+from core.general.balance import validate_balance_covers_transaction_fee
 
 from ..models.comment import Comment
 

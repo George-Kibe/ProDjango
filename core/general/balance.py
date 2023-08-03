@@ -1,6 +1,7 @@
-from cooking_core.accounts.models.account import Account
-from cooking_core.config.models import get_value
 from rest_framework.exceptions import ValidationError
+
+from core.accounts.models.account import Account
+from core.config.models import get_value
 
 
 def deduct_amount(*, account_number, amount):

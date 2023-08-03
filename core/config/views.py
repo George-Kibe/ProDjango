@@ -1,6 +1,7 @@
-from cooking_core.general.views import CustomGenericViewSet, PatchOnlyUpdateModelMixin
 from django.http import Http404
 from rest_framework.mixins import RetrieveModelMixin
+
+from core.general.views import CustomGenericViewSet, PatchOnlyUpdateModelMixin
 
 from .models import Config
 from .serializers import ConfigSerializer

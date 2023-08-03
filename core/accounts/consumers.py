@@ -5,9 +5,10 @@ import channels.layers
 from asgiref.sync import async_to_sync
 from channels.exceptions import StopConsumer
 from channels.generic.websocket import JsonWebsocketConsumer
-from cooking_core.general.authentication import authenticate
-from cooking_core.general.exceptions import NotAuthenticated
-from cooking_core.general.utils.cryptography import derive_public_key
+
+from core.general.authentication import authenticate
+from core.general.exceptions import NotAuthenticated
+from core.general.utils.cryptography import derive_public_key
 
 ACCOUNT_GROUP_TEMPLATE = 'account_{}'  # only the account owner is subscribed to this group
 ONLINE_STATUS_TRACKING_GROUP_TEMPLATE = 'online_{}'  # peers subscribe to this channel for online status notifications

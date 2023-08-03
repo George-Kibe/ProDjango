@@ -1,9 +1,10 @@
-from cooking_core.general.constants import ACCOUNT_NUMBER_LENGTH
-from cooking_core.general.utils.cryptography import derive_public_key
-from cooking_core.general.validators import HexStringValidator
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework import serializers
+
+from core.general.constants import ACCOUNT_NUMBER_LENGTH
+from core.general.utils.cryptography import derive_public_key
+from core.general.validators import HexStringValidator
 
 Account = get_user_model()
 

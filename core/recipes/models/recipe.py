@@ -1,5 +1,6 @@
-from cooking_core.general.models import CreatedModified
 from django.db import models
+
+from core.general.models import CreatedModified
 
 
 class Recipe(CreatedModified):

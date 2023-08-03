@@ -1,6 +1,7 @@
-from cooking_core.accounts.serializers.account import AccountSerializer
-from cooking_core.general.balance import validate_balance_covers_transaction_fee
 from rest_framework import serializers
+
+from core.accounts.serializers.account import AccountSerializer
+from core.general.balance import validate_balance_covers_transaction_fee
 
 from ..models.recipe import Recipe
 

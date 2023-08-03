@@ -1,9 +1,10 @@
-from cooking_core.accounts.models.account import Account
-from cooking_core.config.models import get_value
-from cooking_core.general.serializers import ValidateFieldsMixin
-from cooking_core.general.utils.cryptography import is_dict_signature_valid
 from rest_framework.exceptions import ValidationError
 from rest_framework.serializers import ModelSerializer
+
+from core.accounts.models.account import Account
+from core.config.models import get_value
+from core.general.serializers import ValidateFieldsMixin
+from core.general.utils.cryptography import is_dict_signature_valid
 
 from ..models.block import Block
 

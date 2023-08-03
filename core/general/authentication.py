@@ -2,9 +2,10 @@ import logging
 import re
 from datetime import datetime, timedelta, timezone
 
-from cooking_core.general.utils.cryptography import is_signature_valid
 from django.conf import settings
 from django.utils import timezone as django_timezone
+
+from core.general.utils.cryptography import is_signature_valid
 
 TOKEN_RE = re.compile(
     r'^(?P<account_number>[0-9a-f]{64})\$(?P<iso_formatted_datetime>.+?)\$(?P<signature>[0-9a-f]{128})$'

@@ -1,6 +1,7 @@
-from cooking_core.general.managers import CustomQuerySet
-from cooking_core.general.utils.cryptography import derive_public_key
 from django.contrib.auth.models import BaseUserManager
+
+from core.general.managers import CustomQuerySet
+from core.general.utils.cryptography import derive_public_key
 
 
 class AccountManager(BaseUserManager.from_queryset(CustomQuerySet)):  # type: ignore

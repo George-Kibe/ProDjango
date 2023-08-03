@@ -35,6 +35,7 @@ shell:
 superuser:
 	poetry run python3 -m core.manage createsuperuser
 
+# -v for verbose -rs report s-skipped -n for as many cores as possible --show-capture=no not to show outputs
 .PHONY: test
 test:
 	poetry run pytest -v -rs -n auto --show-capture=no

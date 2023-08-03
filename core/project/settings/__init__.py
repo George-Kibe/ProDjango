@@ -3,7 +3,7 @@ from pathlib import Path
 
 from split_settings.tools import include, optional
 
-# from core.general.utils.pytest import is_pytest_running
+from core.general.utils.pytest import is_pytest_running
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
 ENVVAR_SETTINGS_PREFIX = 'PRO_DJANGO_SETTINGS_'
@@ -29,5 +29,5 @@ include(
     'docker.py',
 )
 
-# if not is_pytest_running():
-#    assert SECRET_KEY is not NotImplemented  # type: ignore # noqa: F821
+if not is_pytest_running():
+    assert SECRET_KEY is not NotImplemented  # type: ignore # noqa: F821

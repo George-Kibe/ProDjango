@@ -1,9 +1,10 @@
-from cooking_core.config.models import get_value
-from cooking_core.general.balance import deduct_amount
-from cooking_core.general.permissions import IsObjectCreatorOrReadOnly
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import status, viewsets
 from rest_framework.response import Response
+
+from core.config.models import get_value
+from core.general.balance import deduct_amount
+from core.general.permissions import IsObjectCreatorOrReadOnly
 
 from ..filters.comment import CommentFilter
 from ..models import Comment

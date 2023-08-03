@@ -1,12 +1,13 @@
 from functools import partial
 
-from cooking_core.accounts import consumers
-from cooking_core.accounts.consumers import MessageType
-from cooking_core.accounts.models import Account
-from cooking_core.config.models import get_value
-from cooking_core.general.utils.misc import apply_on_commit
-from cooking_core.general.views import CustomGenericViewSet
 from rest_framework.mixins import CreateModelMixin, ListModelMixin
+
+from core.accounts import consumers
+from core.accounts.consumers import MessageType
+from core.accounts.models import Account
+from core.config.models import get_value
+from core.general.utils.misc import apply_on_commit
+from core.general.views import CustomGenericViewSet
 
 from ..models.block import Block
 from ..serializers.block import BlockSerializer

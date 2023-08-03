@@ -1,9 +1,10 @@
-from cooking_core.general.constants import ACCOUNT_NUMBER_LENGTH
-from cooking_core.general.models.custom_model import CustomModel
-from cooking_core.general.validators import HexStringValidator
 from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator
 from django.db import models
+
+from core.general.constants import ACCOUNT_NUMBER_LENGTH
+from core.general.models.custom_model import CustomModel
+from core.general.validators import HexStringValidator
 
 
 def get_value(name):

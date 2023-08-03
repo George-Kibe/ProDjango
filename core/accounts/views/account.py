@@ -1,7 +1,8 @@
-from cooking_core.general.permissions import IsAccountOwner
-from cooking_core.general.utils.cryptography import generate_key_pair
 from rest_framework import status, viewsets
 from rest_framework.response import Response
+
+from core.general.permissions import IsAccountOwner
+from core.general.utils.cryptography import generate_key_pair
 
 from ..models import Account
 from ..serializers.account import AccountSerializer

@@ -1,6 +1,7 @@
 import pytest
-from cooking_core.general.utils.cryptography import KeyPair
 from model_bakery import baker
+
+from core.general.utils.cryptography import KeyPair
 
 
 @pytest.fixture

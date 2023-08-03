@@ -1,14 +1,15 @@
 from functools import partial
 from typing import List
 
-from cooking_core.accounts import consumers
-from cooking_core.accounts.consumers import MessageType
-from cooking_core.general.constants import ACCOUNT_NUMBER_LENGTH
-from cooking_core.general.utils.misc import apply_on_commit
-from cooking_core.general.validators import HexStringValidator
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.db import models
 from model_utils import FieldTracker
+
+from core.accounts import consumers
+from core.accounts.consumers import MessageType
+from core.general.constants import ACCOUNT_NUMBER_LENGTH
+from core.general.utils.misc import apply_on_commit
+from core.general.validators import HexStringValidator
 
 from ..managers.account import AccountManager
 
